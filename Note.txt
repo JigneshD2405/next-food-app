@@ -1,0 +1,50 @@
+=>Next js Uses File based Routing
+
+=>Only files & folder inside the app folder are considered
+Ex :-
+    /app
+      /about    ==> localhost/about
+      /blog     ==> localhost/blog
+        /post-1 ==>localhost/blog/post-1
+      
+$$ Next js Works with React Server Components
+
+=>Components which require a special environment
+=>NEXT JS provides such an environment
+
+React Server Components (It rendered only on the server Never on the client)
+
+
+Filename matters
+
+Nextjs relies on reserved special filenames
+But filenames only matters inside the "app" folder
+
+page.js  => define page content
+layout.js =>Define wrapper around pages
+not-found.js =>Define "Not Found" fallback pages
+error.js => Define "Error" fallback pages
+loading.js =>run while function Loading 
+
+
+=>  <a href="/about">About Us</a>      
+If We use href method to redirect from one page to another page then there is problem like application will not single page application as every time request goes to server server create html page to page is sended
+
+
+layout.js file creates sell around One or More pages
+
+=>Every Next js File need atleast one layout ja file
+
+==>icon.png if I use named icon in APP folder then Next will treat as favicon 
+
+Dynamic Routes ([]):-
+square bracket
+
+
+Server(RSC React Server Component) vs Client Components
+
+Vanilla React Apps Render on The client :-
+Backend Server ==>(Only Returns one side Single HTML file which contains the Client-Side JS code) =>Client-side (Frontend) (Visible content is generated & rendered on the client-side (by Client side react code))
+
+In Nextjs :-
+Server Backend ==>(The Backend Executes the Server Component functions & Hence drives the to-be-rendered HTML Code) ==>Client-side (The Client-side) Receives & Render the to-be-rendered HTML Code.
