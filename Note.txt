@@ -48,3 +48,22 @@ Backend Server ==>(Only Returns one side Single HTML file which contains the Cli
 
 In Nextjs :-
 Server Backend ==>(The Backend Executes the Server Component functions & Hence drives the to-be-rendered HTML Code) ==>Client-side (The Client-side) Receives & Render the to-be-rendered HTML Code.
+
+
+export async function shareMeal(formData: FormData) {
+  "use server";
+  const meal = {
+    title: formData.get("title"),
+    summary: formData.get("summary"),
+    instructions: formData.get("instructions"),
+    creator: formData.get("name"),
+    creator_email: formData.get("email"),
+    image: formData.get("image"),
+  };
+
+  await saveMeal(meal as mealsProp);
+  redirect("/meals");
+}
+
+
+import useFormStatus from "react-dom"

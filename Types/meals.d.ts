@@ -1,8 +1,11 @@
 export interface mealsProp {
   id: string;
-  title: string;
   slug: string;
-  image: string;
+  title: string;
+  image: string | File;
   summary: string;
   creator: string;
+  instructions: string;
+  creator: string;
+  creator_email: string;
 }
