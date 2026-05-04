@@ -67,3 +67,13 @@ export async function shareMeal(formData: FormData) {
 
 
 import useFormStatus from "react-dom"
+
+
+import { useFormState } from "react-dom";  this is Renamed useActionState
+let serverActionWhichTrigger when form submitted
+useFormState(serverActionWhichTrigger,null)
+
+
+revalidatePath("/meals);
+by default it revalidate on meal page if We and to revalidate entire meals with meals/[slug],meals/share all this then
+revalidatePath("/meals","layout") by default it will be on page

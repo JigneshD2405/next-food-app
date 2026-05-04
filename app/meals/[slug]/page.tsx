@@ -2,6 +2,21 @@ import { getMeal } from "@/lib/meals";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import classes from "./page.module.css";
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const p = await params;
+  const meal = await getMeal(p.slug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailsPage({ params }: { params: { slug: string } }) {
   const p = await params;
   const meal = getMeal(p.slug);
@@ -15,7 +30,7 @@ export default async function MealDetailsPage({ params }: { params: { slug: stri
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal?.image} alt={meal?.title} fill />
+          <Image src={meal?.image as string} alt={meal?.title} fill />
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
